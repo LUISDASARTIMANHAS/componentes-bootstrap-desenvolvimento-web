@@ -1,5 +1,5 @@
-import { renderIMG,renderA,renderButton } from "./render.js";
-(() => {
+import { renderIMG, renderA, renderButton } from "./render.js";
+window.addEventListener("load", () => {
   const url = "./src/data/topMovies.json";
   const options = {
     method: "GET",
@@ -24,43 +24,78 @@ import { renderIMG,renderA,renderButton } from "./render.js";
       console.log(data);
       render(data);
     })
-    .catch((error) => onErrorHostname(error));
+    .catch((error) => onError(error));
 
-  function onErrorHostname(error) {
+  function onError(error) {
+    alert(error);
     console.debug(error);
   }
-})();
+});
 
 function render(data) {
   const autoLoadTopFilmes = document.getElementById("autoLoadTopFilmes");
+  const autoLoadTopFilmesBtns = document.getElementById(
+    "autoLoadTopFilmesBtns"
+  );
 
+  renderizarBotoesCarrossel(data, autoLoadTopFilmesBtns);
+
+  renderizarCarrossel(data, autoLoadTopFilmes);
+}
+
+// sub funções
+function renderizarCarrossel(data, autoLoadTopFilmes) {
   // <div class="carousel-item active">
-  //   <img src="./src/img/exemplo.png" class="d-block w-100" alt="..." />
+  // <img src="./src/img/exemplo.png" class="d-block w-100" alt="..." />
   // </div>;
-  for (let i = 0; i < data.length; i++) {
-    var carouselitem = document.createElement("div");
-		var img = document.createElement("img");
+  for (let j = 0; j < data.length; j++) {
+    const topFilme = data[j];
+    let src = topFilme.image;
+    var carrouselItem = document.createElement("div");
 
-    newScriptLib.setAttribute("src", srcsLib[i]);
-    autoscripts.appendChild(newScriptLib);
+    if (!src) {
+      src = "./src/img/image-coming-soon.jpg";
+    }
 
-    console.log(`%c [SISTEMA]: Nova Lib: ${srcsLib[i]}`, "color: #ffa500");
+    // verifica se e o primeiro elemento e aplica configuracoes personalizadas
+    if (j == 0) {
+      carrouselItem.setAttribute("class", "carousel-item active");
+    } else {
+      carrouselItem.setAttribute("class", "carousel-item");
+    }
+
+    renderIMG(carrouselItem, "d-block w-100", src, topFilme.fullTitle);
+
+    // adiciona o div carrossel item na lista
+    autoLoadTopFilmes.appendChild(carrouselItem);
+
+    console.log(
+      `%c [SISTEMA]: Carregado Carrossel image: ${topFilme.fullTitle}`,
+      "color: #00ff00"
+    );
   }
+}
+function renderizarBotoesCarrossel(data, autoLoadTopFilmesBtns) {
+  // <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  //   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  //   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  for (let i = 0; i < data.length; i++) {
+    var button = document.createElement("button");
 
-	// <button
-  //         type="button"
-  //         data-bs-target="#carouselExampleIndicators"
-  //         data-bs-slide-to="2"
-  //         aria-label="Slide 3"
-  //       ></button>
-  for (let i = 0; i < srcs.length; i++) {
-    const src = srcs[i];
-    const link = fonte + src + ".js";
-    var newScript = document.createElement("script");
+    // configurações do botão
+    button.setAttribute("type", "button");
+    button.setAttribute("data-bs-target", "#carouselExampleIndicators");
+    button.setAttribute("data-bs-slide-to", i);
+    button.setAttribute("aria-label", `Slide ${i}`);
 
-    newScript.setAttribute("src", link);
-    autoscripts.appendChild(newScript);
+    // verifica se e o primeiro elemento e aplica configuracoes personalizadas
+    if (i == 0) {
+      button.setAttribute("class", "active");
+      button.setAttribute("aria-current", true);
+    }
 
-    console.log(`%c [SISTEMA]: Carregando script: ${link}`, "color: #ff00ff");
+    // adiciona o button na lista
+    autoLoadTopFilmesBtns.appendChild(button);
+    console.log(`%c [SISTEMA]: Carregado Botão: ${i}`, "color: #00ff00");
   }
 }
