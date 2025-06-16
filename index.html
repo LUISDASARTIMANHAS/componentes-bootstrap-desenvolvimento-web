@@ -1,194 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      http-equiv="Strict-Transport-Security"
-      content="max-age=31536000; includeSubDomains; preload"
-    />
-
-    <link rel="icon" href="./src/img/GameZone-Logo.png" />
-    <seo>
-      <meta name="robots" content="index,follow" />
-      <meta property="og:title" content="GameZone Store" />
-      <meta property="og:type" content="article" />
-      <meta property="og:url" content="https://pingobras.glitch.me" />
-      <meta
-        property="og:description"
-        content="GameZone Store - Loja de Games"
-      />
-      <meta property="og:image" content="./src/img/GameZone-Logo.png" />
-      <meta name="twitter:card" content="summary" />
-    </seo>
-
-    <link href="./src/css/bootstrap@5.3.6.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./src/img/logo.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/FontAwesomeFree6.4.0.css" />
+    <link rel="stylesheet" href="./src/css/bootstrap@5.3.6.css" />
+    <!-- <link rel="stylesheet" href="./src/css/animantions.css" /> -->
     <link rel="stylesheet" href="./src/css/style.css" />
 
-    <title>GameZone Store - Loja de Games</title>
+    <seo>
+      <meta name="robots" content="index,follow" />
+      <meta
+        property="og:title"
+        content="StreamFlix - Seu Streaming de Filmes"
+      />
+      <meta property="og:type" content="streaming" />
+      <meta
+        property="og:description"
+        content="StreamFlix - Seu Streaming de Filmes"
+      />
+      <meta property="og:image" content="./src/img/logo.jpg" />
+      <meta name="twitter:card" content="summary" />
+    </seo>
+    
+    <title>StreamFlix - Seu Streaming de Filmes</title>
   </head>
-  <body>
+  <body class="bg-dark text-light">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="container-fluid navbar-brand logo-container" href="#">
-          <img
-            class="logo"
-            src="./src/img/GameZone-Logo.png"
-            alt="GameZone-Logo"
-          />
-          <p>GameZone Store</p>
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+      <a class="navbar-brand" href="#">StreamFlix</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasFilters"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Botão que abre o Offcanvas -->
-        <button
-          class="btn btn-outline-light"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasFiltros"
-        >
-          Filtros
-        </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Filmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasMinhaLista" role="button" aria-controls="offcanvasMinhaLista">
+              📌 Minha Lista
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
-    <!-- Offcanvas - Filtros de Jogos -->
-    <div
-      class="offcanvas offcanvas-start text-bg-dark"
-      tabindex="-1"
-      id="offcanvasFiltros"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Filtros de Jogos</h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="offcanvas"
-          aria-label="Fechar"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <p><strong>Gêneros:</strong></p>
-        <ul>
-          <li>Ação</li>
-          <li>Aventura</li>
-          <li>RPG</li>
-          <li>Corrida</li>
-        </ul>
+    <br />
 
-        <p><strong>Plataformas:</strong></p>
-        <ul>
-          <li>PC</li>
-          <li>PlayStation</li>
-          <li>Xbox</li>
-        </ul>
+    <!-- carrosel top filmes -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators" id="autoLoadTopFilmesBtns">
+        <!-- carregado automaticamente -->
       </div>
+      <div class="carousel-inner" id="autoLoadTopFilmes">
+        <!-- carregado automaticamente  -->
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
-    <!-- Offcanvas Filtros -->
-    <div
-      class="offcanvas offcanvas-start bg-dark text-white"
-      tabindex="-1"
-      id="filtros"
-    >
-      <div class="offcanvas-header">
-        <h5>Filtros</h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="offcanvas"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <p><strong>Plataformas:</strong></p>
-        <ul>
-          <li>PC</li>
-          <li>PlayStation</li>
-          <li>Xbox</li>
-          <li>Nintendo</li>
-        </ul>
-        <p><strong>Gêneros:</strong></p>
-        <ul>
-          <li>Ação</li>
-          <li>Aventura</li>
-          <li>RPG</li>
-          <li>Estratégia</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Cards de Jogos -->
-    <div class="container mt-3">
-      <div class="row">
-        <!-- Jogo 1 -->
-        <div class="col-md-2">
-          <div class="card">
-            <img
-              src="./src/img/Space-Adventure.jpg"
-              class="card-img-top"
-              alt="Jogo 1"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Space Adventure</h5>
-              <p class="card-text">
-                Explore planetas desconhecidos e lute contra alienígenas.
-              </p>
-              <button
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#jogo1Modal"
-              >
-                Detalhes
-              </button>
-            </div>
-          </div>
+    <div class="container-fluid mt-5">
+      <!-- Categoria: Lançamentos -->
+      <section class="mb-4">
+        <h3 class="mb-3 px-3">🎬 Lançamentos</h3>
+        <div class="row px-3 g-3" id="secao-lancamentos">
+          <!-- Cards de filmes carregados via JS -->
         </div>
+      </section>
 
-        <!-- Jogo 2 -->
-        <div class="col-md-2">
-          <div class="card">
-            <img
-              src="./src/img/Racing-Legends.jpg"
-              class="card-img-top"
-              alt="Jogo 2"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Racing Legends</h5>
-              <p class="card-text">
-                Corra nas pistas mais radicais do mundo com carros velozes.
-              </p>
-              <button
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#jogo2Modal"
-              >
-                Detalhes
-              </button>
-            </div>
-          </div>
+      <!-- Categoria: Em Alta (Trending) -->
+      <section class="mb-4">
+        <h3 class="mb-3 px-3">🔥 Em Alta</h3>
+        <div class="row px-3 g-3" id="secao-trending">
+          <!-- Conteúdo via JS -->
         </div>
-      </div>
+      </section>
+
+      <!-- Categoria: Melhores Avaliados -->
+      <section class="mb-4">
+        <h3 class="mb-3 px-3">🏆 Melhores Avaliados</h3>
+        <div class="row px-3 g-3" id="secao-toprated">
+          <!-- Conteúdo via JS -->
+        </div>
+      </section>
+
+      <!-- Categoria: Próximos Lançamentos -->
+      <section class="mb-4">
+        <h3 class="mb-3 px-3">📅 Em Breve</h3>
+        <div class="row px-3 g-3" id="secao-upcoming">
+          <!-- Conteúdo via JS -->
+        </div>
+      </section>
+
     </div>
 
-    <!-- Accordion - FAQ -->
-    <div class="container mt-4">
-      <h4>Dúvidas Frequentes (FAQ)</h4>
-      <div class="accordion" id="faqAccordion">
+    <div class="container">
+      <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
               class="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#pergunta1"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
             >
-              Qual o prazo de entrega?
+              O que é a StreamFlix
             </button>
           </h2>
-          <div id="pergunta1" class="accordion-collapse collapse show">
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+          >
             <div class="accordion-body">
-              Entregamos em até 24 horas por download digital.
+              <p>
+                A StreamFlix é um serviço de streaming que oferece uma ampla
+                variedade de séries, filmes e documentários premiados em
+                milhares de aparelhos conectados à internet.
+              </p>
+              <p>
+                Você pode assistir a quantos filmes e séries quiser, quando e
+                onde quiser – tudo por um preço mensal acessível. Aqui você
+                sempre encontra novidades. A cada semana, adicionamos novas
+                séries e filmes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Onde posso assistir?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <p>
+                Assista onde quiser, quando quiser. Acesse sua conta StreamFlix
+                em StreamFlix.com para assistir no computador ou em qualquer
+                aparelho conectado à internet compatível com o aplicativo
+                StreamFlix, como Smart TVs, smartphones, tablets, aparelhos de
+                streaming e videogames.
+              </p>
+
+              <p>
+                Você também pode baixar suas séries favoritas com o aplicativo
+                StreamFlix para iOS ou Android. Use os downloads para levar a
+                StreamFlix para onde quiser sem precisar de conexão com a
+                internet. Leve a StreamFlix com você para qualquer lugar.
+              </p>
             </div>
           </div>
         </div>
@@ -198,79 +196,53 @@
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#pergunta2"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
             >
-              Quais são as formas de pagamento?
+              A StreamFlix é adequada para crianças?
             </button>
           </h2>
-          <div id="pergunta2" class="accordion-collapse collapse">
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
             <div class="accordion-body">
-              Aceitamos cartão de crédito, boleto e Pix.
+              <p>
+                A experiência infantil da StreamFlix faz parte da sua assinatura
+                para que as crianças se divirtam em seu próprio espaço com
+                séries e filmes familiares sob a supervisão dos responsáveis.
+              </p>
+              <p>
+                O recurso de controle parental, incluso nos perfis para crianças
+                e protegido por PIN, permite restringir a classificação etária
+                do conteúdo que as crianças podem ver e bloquear títulos
+                específicos que você não quer que elas assistam.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal Jogo 1 -->
-    <div class="modal fade" id="jogo1Modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Space Adventure - Detalhes</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>
-              Jogo de aventura espacial com gráficos incríveis e jogabilidade
-              envolvente.
-            </p>
-            <p>Plataformas: PC, PlayStation, Xbox.</p>
-          </div>
-        </div>
+    <!-- Offcanvas - Minha Lista -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasMinhaLista" aria-labelledby="offcanvasMinhaListaLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMinhaListaLabel">🎞️ Assistir Depois</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="lista-salvos">
+        <p class="text-muted">Nenhum filme salvo ainda.</p>
       </div>
     </div>
 
-    <!-- Modal Jogo 2 -->
-    <div class="modal fade" id="jogo2Modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Racing Legends - Detalhes</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>Simulador de corrida com pistas e veículos realistas.</p>
-            <p>Plataformas: PC, PlayStation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <p>
-        ₢Todos os Direitos Reservados -
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-      </p>
-    </footer>
-
+    <script src="./src/js/popper@2.11.8.js"></script>
     <script src="./src/js/bootstrap@5.3.6.js"></script>
-    <host>
-      <!-- telemetria -->
-      <script
-        src="https://pingobras.glitch.me/src/js/load-host.js"
-        defer
-      ></script>
-    </host>
+    <script src="./src/js/loader-secoes.js" type="module"></script>
+    <script src="./src/js/loader-top-filmes.js" type="module"></script>
+    <script src="./src/js/loader-tmdb.js" type="module"></script> <!-- NOVO -->
+    <script src="./src/js/watchlist.js" type="module"></script>
+    
   </body>
 </html>
