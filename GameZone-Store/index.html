@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
+
+    <link rel="icon" href="./src/img/GameZone-Logo.png" />
+    <seo>
+      <meta name="robots" content="index,follow" />
+      <meta property="og:title" content="GameZone Store" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://pingobras.glitch.me" />
+      <meta
+        property="og:description"
+        content="GameZone Store - Loja de Games"
+      />
+      <meta property="og:image" content="./src/img/GameZone-Logo.png" />
+      <meta name="twitter:card" content="summary" />
+    </seo>
+
+    <link href="./src/css/bootstrap@5.3.6.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <title>GameZone Store - Loja de Games</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="container-fluid navbar-brand logo-container" href="#">
+          <img
+            class="logo"
+            src="./src/img/GameZone-Logo.png"
+            alt="GameZone-Logo"
+          />
+          <p>GameZone Store</p>
+        </a>
+
+        <!-- Botão que abre o Offcanvas -->
+        <button
+          class="btn btn-outline-light"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasFiltros"
+        >
+          Filtros
+        </button>
+      </div>
+    </nav>
+
+    <!-- Offcanvas - Filtros de Jogos -->
+    <div
+      class="offcanvas offcanvas-start text-bg-dark"
+      tabindex="-1"
+      id="offcanvasFiltros"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Filtros de Jogos</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p><strong>Gêneros:</strong></p>
+        <ul>
+          <li>Ação</li>
+          <li>Aventura</li>
+          <li>RPG</li>
+          <li>Corrida</li>
+        </ul>
+
+        <p><strong>Plataformas:</strong></p>
+        <ul>
+          <li>PC</li>
+          <li>PlayStation</li>
+          <li>Xbox</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Offcanvas Filtros -->
+    <div
+      class="offcanvas offcanvas-start bg-dark text-white"
+      tabindex="-1"
+      id="filtros"
+    >
+      <div class="offcanvas-header">
+        <h5>Filtros</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p><strong>Plataformas:</strong></p>
+        <ul>
+          <li>PC</li>
+          <li>PlayStation</li>
+          <li>Xbox</li>
+          <li>Nintendo</li>
+        </ul>
+        <p><strong>Gêneros:</strong></p>
+        <ul>
+          <li>Ação</li>
+          <li>Aventura</li>
+          <li>RPG</li>
+          <li>Estratégia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cards de Jogos -->
+    <div class="container mt-3">
+      <div class="row">
+        <!-- Jogo 1 -->
+        <div class="col-md-2">
+          <div class="card">
+            <img
+              src="./src/img/Space-Adventure.jpg"
+              class="card-img-top"
+              alt="Jogo 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Space Adventure</h5>
+              <p class="card-text">
+                Explore planetas desconhecidos e lute contra alienígenas.
+              </p>
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#jogo1Modal"
+              >
+                Detalhes
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jogo 2 -->
+        <div class="col-md-2">
+          <div class="card">
+            <img
+              src="./src/img/Racing-Legends.jpg"
+              class="card-img-top"
+              alt="Jogo 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Racing Legends</h5>
+              <p class="card-text">
+                Corra nas pistas mais radicais do mundo com carros velozes.
+              </p>
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#jogo2Modal"
+              >
+                Detalhes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion - FAQ -->
+    <div class="container mt-4">
+      <h4>Dúvidas Frequentes (FAQ)</h4>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#pergunta1"
+            >
+              Qual o prazo de entrega?
+            </button>
+          </h2>
+          <div id="pergunta1" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              Entregamos em até 24 horas por download digital.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#pergunta2"
+            >
+              Quais são as formas de pagamento?
+            </button>
+          </h2>
+          <div id="pergunta2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Aceitamos cartão de crédito, boleto e Pix.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Jogo 1 -->
+    <div class="modal fade" id="jogo1Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Space Adventure - Detalhes</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Jogo de aventura espacial com gráficos incríveis e jogabilidade
+              envolvente.
+            </p>
+            <p>Plataformas: PC, PlayStation, Xbox.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Jogo 2 -->
+    <div class="modal fade" id="jogo2Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Racing Legends - Detalhes</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Simulador de corrida com pistas e veículos realistas.</p>
+            <p>Plataformas: PC, PlayStation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        ₢Todos os Direitos Reservados -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+    </footer>
+
+    <script src="./src/js/bootstrap@5.3.6.js"></script>
+    <host>
+      <!-- telemetria -->
+      <script
+        src="https://pingobras.glitch.me/src/js/load-host.js"
+        defer
+      ></script>
+    </host>
+  </body>
+</html>

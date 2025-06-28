@@ -1,0 +1,107 @@
+/* Tema escuro com neon */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar com sombra */
+.navbar {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Cards com efeito de sombra e animação hover */
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Botões com efeito */
+.btn-primary {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    transform: scale(1.05);
+}
+
+/* Accordion custom */
+.accordion-button {
+    background-color: #1f1f1f;
+    color: #00f2fe;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #00f2fe;
+    color: black;
+}
+
+/* Offcanvas estilizado */
+.offcanvas {
+    background-color: #1e1e1e;
+    box-shadow: 4px 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Modal com efeito fade */
+.modal-content {
+    background-color: #1f1f1f;
+    color: white;
+    border: 2px solid #00f2fe;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Títulos com cor neon */
+.card-title,
+.offcanvas-title,
+.accordion-header button {
+    color: #00f2fe;
+}
+
+footer {
+    margin-top: 63px;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container p {
+    padding: 9px;
+    margin: 0;
+}
